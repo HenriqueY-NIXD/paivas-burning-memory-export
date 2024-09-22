@@ -16,25 +16,16 @@
       "shell": {
         "all": false,
         "open": true
-      },
-      "window": {
-        "all": false,
-        "close": true,
-        "hide": true,
-        "show": true,
-        "maximize": true,
-        "minimize": true,
-        "unmaximize": true,
-        "unminimize": true,
-        "startDragging": true
       }
     },
     "windows": [
       {
         "title": "paiva-burning-memory-export",
-        "width": 800,
-        "height": 600,
-        "decorations": false
+        "width": 1280,
+        "height": 720,
+        "center": true,
+        "resizable": false,
+        "fullscreen": false
       }
     ],
     "security": {
