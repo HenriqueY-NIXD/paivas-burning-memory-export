@@ -1,6 +1,7 @@
 <script lang="js">
     import { invoke } from '@tauri-apps/api/tauri';
     import { open } from '@tauri-apps/api/dialog';
+    import { writeTextFile } from '@tauri-apps/api/fs';
 
     // type Data = {
     //     album: string;
@@ -19,8 +20,13 @@
         if (!folderPath) return;
 
         invoke('sporta')
-        .then((data) => {
+        .then(async (data) => {
             isSucess = true;
+
+            if (!data || data.lenght < 1) return;
+
+            const jsonData = JSON.stringify(data, null, 2);
+            await writeTextFile(folderPath + '/paiva-burning-memory.json', jsonData);
 
             setTimeout(() => {
                 isSucess = false;
